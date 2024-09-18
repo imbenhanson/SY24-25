@@ -49,7 +49,6 @@ namespace Minesweeper
             {
                 btnGrid[i] = (Button)Controls["button" + (i + 1)];
                 tileGrid[i] = new tile(btnGrid[i]);
-                btnGrid[i].BackColor = Color.Green;
             }
         }
 
