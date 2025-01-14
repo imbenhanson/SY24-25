@@ -14,7 +14,9 @@ namespace textboxes
     public partial class Form1 : Form
     {
         int total = 0;
+        int totalB = 0;
         int[] bits=new int[8];
+        int[] bitsB = new int[8];
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace textboxes
 
         private void Calc()
         {
+            //clear the total
             total = 0;
             if (bits[0]!=0) total += 1;
             if (bits[1] != 0) total += 2;
@@ -32,6 +35,20 @@ namespace textboxes
             if (bits[6] != 0) total += 64;
             if (bits[7] != 0) total += 128;
 TotalLabel.Text=total.ToString();
+        }
+        private void CalcB()
+        {
+            //clear the total
+            totalB = 0;
+            if (bitsB[0] != 0) totalB += 1;
+            if (bitsB[1] != 0) totalB += 2;
+            if (bitsB[2] != 0) totalB += 4;
+            if (bitsB[3] != 0) totalB += 8;
+            if (bitsB[4] != 0) totalB += 16;
+            if (bitsB[5] != 0) totalB += 32;
+            if (bitsB[6] != 0) totalB += 64;
+            if (bitsB[7] != 0) totalB += 128;
+            TotalLabelB.Text = totalB.ToString();
         }
         private void bit8_TextChanged(object sender, EventArgs e)
         {
@@ -70,5 +87,41 @@ TotalLabel.Text=total.ToString();
             Calc();
         }
 
+        private void bitb8_TextChanged(object sender, EventArgs e)
+        {
+            if (bitb1.Text == "1")
+                bitsB[0] = 1;
+            else
+                bitsB[0] = 0;
+            if (bitb2.Text == "1")
+                bitsB[1] = 1;
+            else
+                bits[1] = 0;
+            if (bitb3.Text == "1")
+                bitsB[2] = 1;
+            else
+                bitsB[2] = 0;
+            if (bitb4.Text == "1")
+                bitsB[3] = 1;
+            else
+                bitsB[3] = 0;
+            if (bitb5.Text == "1")
+                bitsB[4] = 1;
+            else
+                bitsB[4] = 0;
+            if (bitb6.Text == "1")
+                bitsB[5] = 1;
+            else
+                bitsB[5] = 0;
+            if (bitb7.Text == "1")
+                bitsB[6] = 1;
+            else
+                bitsB[6] = 0;
+            if (bitb8.Text == "1")
+                bitsB[7] = 1;
+            else
+                bitsB[7] = 0;
+            CalcB();
+        }
     }
 }
